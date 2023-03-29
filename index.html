@@ -71,6 +71,165 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-lab-report-3-2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/03/29/lab-report-3-2/" class="article-date">
+  <time class="dt-published" datetime="2023-03-29T08:33:39.000Z" itemprop="datePublished">2023-03-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/03/29/lab-report-3-2/">lab report 3-2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="搭建个人博客"><a href="#搭建个人博客" class="headerlink" title="搭建个人博客"></a>搭建个人博客</h3><p>熟悉个人博客系统的搭建。（参考方案：注册Github账号，搭建Hexo环境并实现个人博客搭建，撰写实验报告。）</p>
+<h3 id="实验步骤与内容："><a href="#实验步骤与内容：" class="headerlink" title="实验步骤与内容："></a>实验步骤与内容：</h3><h4 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h4><p><a target="_blank" rel="noopener" href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></p>
+<img src="/2023/03/29/lab-report-3-2/clip_image002-16795726880641.png" class title="img">
+
+<h4 id="安装node-js："><a href="#安装node-js：" class="headerlink" title="安装node.js："></a>安装node.js：</h4><p><a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/">https://nodejs.org/zh-cn/</a></p>
+<img src="/2023/03/29/lab-report-3-2/clip_image004-16795726880652.png" class title="img">
+
+<p>安装完成后，Win+R 输入 cmd 并打开，依次输入 node -v、npm -v 和 git –version 并回车，如下图出现程序版本号即可：</p>
+<img src="/2023/03/29/lab-report-3-2/clip_image006-16795726880653.png" class title="img">
+
+<h4 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h4><p>（1） 创建一个根目录</p>
+<p>首先创建一个文件夹,名字为 Blog，这个文件夹在后续就是用来存放你所创建博客的所有文件，也称根目录。</p>
+<img src="/2023/03/29/lab-report-3-2/clip_image008-16795726880654.png" class title="img">
+
+<p>（2） 安装hexo</p>
+<p>（注：以下内容在git base执行）</p>
+<p>npm install -g hexo-cli</p>
+<img src="/2023/03/29/lab-report-3-2/clip_image010-16795726880655.png" class title="img">
+
+<p>（3） 验证安装是否成功：</p>
+<p>hexo -v</p>
+<img src="/2023/03/29/lab-report-3-2/clip_image012-16795726880656.png" class title="img">
+
+<p>初始化并安装所需组件：</p>
+<p>hexo init   # 初始化</p>
+<p>npm install  # 安装组件</p>
+<img src="/2023/03/29/lab-report-3-2/clip_image014-16795726880657.png" class title="img">完成后依次输入下面命令，启动本地服务器进行预览：
+
+<p>hexo g  # 生成页面</p>
+<p>hexo s  # 启动预览</p>
+<img src="/2023/03/29/lab-report-3-2/clip_image016-16795726880658.png" class title="img">
+
+<img src="/2023/03/29/lab-report-3-2/clip_image018-16795726880659.png" class title="img">
+
+<p>在浏览器输入网址<a href="https://link.zhihu.com/?target=http://localhost:4000/">http://localhost:4000</a>就可以查看本地博客网页了：</p>
+<img src="/2023/03/29/lab-report-3-2/clip_image020-167957268806510.png" class title="img">
+
+<h4 id="托管到git"><a href="#托管到git" class="headerlink" title="托管到git"></a>托管到git</h4><p> 想让别人访问自己的博客，在本地运行肯定是不可以的。我们可以先托管到github上。</p>
+<p>首先登录github创建新的repository，仓库名称一定要使用github用户名+github.io。</p>
+<p>配置git的ssh（为了简化以后的操作，不再输入github的密码）：</p>
+<img src="/2023/03/29/lab-report-3-2/clip_image022-167957268806511.png" class title="img">
+
+<p>下图中显示了密钥和公钥的存放路径：</p>
+<img src="/2023/03/29/lab-report-3-2/clip_image024-167957268806512.png" class title="img">
+
+<p>将id_rsa.pub的内容全部复制出来。</p>
+<p>（把这个公钥放在GitHub上，这样当你链接GitHub自己的账户时，它就会根据公钥匹配你的私钥，当能够相互匹配时，才能够顺利的通过git上传你的文件到GitHub上。）</p>
+<img src="/2023/03/29/lab-report-3-2/clip_image026-167957268806513.png" class title="img">
+
+<p>在github上配置密钥</p>
+<p>新建ssh key，填写刚刚id_rsa.pub的内容。</p>
+<img src="/2023/03/29/lab-report-3-2/clip_image028-167957268806614.png" class title="img">
+
+<p>测试秘钥配置：</p>
+<img src="/2023/03/29/lab-report-3-2/clip_image030-167957268806615.png" class title="img">
+
+<h4 id="托管到GitHub"><a href="#托管到GitHub" class="headerlink" title="托管到GitHub"></a>托管到GitHub</h4><p>配置仓库地址</p>
+<p>将hexo和Github关联起来，在博客根目录下找到 _config.yml,最下面的deploy中配置repo：（注意：yml配置的时候注意缩进和：后面跟个空格）</p>
+<img src="/2023/03/29/lab-report-3-2/clip_image032-167957268806616.png" class title="img">
+
+<p>Hexo安装部署：</p>
+<img src="/2023/03/29/lab-report-3-2/clip_image034-167957268806617.png" class title="img">
+
+<p>打开浏览器，输入<a target="_blank" rel="noopener" href="https://hwx-123.github.io/%EF%BC%8C%E5%B0%B1%E5%8F%AF%E4%BB%A5%E8%AE%BF%E9%97%AE%E5%8D%9A%E5%AE%A2%E4%BA%86%E3%80%82">https://hwx-123.github.io/，就可以访问博客了。</a></p>
+<img src="/2023/03/29/lab-report-3-2/clip_image036-167957268806618.png" class title="img">
+
+<h3 id="写博客"><a href="#写博客" class="headerlink" title="写博客"></a>写博客</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo new &lt;title&gt;//创建新的文章</span><br><span class="line"></span><br><span class="line">hexo clean//清除旧的数据</span><br><span class="line"></span><br><span class="line">hexo g  &amp;&amp; hexo d//生成新的页面并部署</span><br></pre></td></tr></table></figure>
+
+<img src="/2023/03/29/lab-report-3-2/clip_image002-167957298456919.png" class title="img">
+
+<p>在markdown中编辑：</p>
+<img src="/2023/03/29/lab-report-3-2/clip_image004-167957298457020.png" class title="img">
+
+<p>其中文章开头有一段Front-matter内容，还有其他配置项可以添加：</p>
+<table>
+<thead>
+<tr>
+<th align="left">配置项</th>
+<th align="left">意义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">title</td>
+<td align="left">网页文章标题</td>
+</tr>
+<tr>
+<td align="left">date</td>
+<td align="left">文章创建如期</td>
+</tr>
+<tr>
+<td align="left">comments</td>
+<td align="left">文章评论功能是否启动</td>
+</tr>
+<tr>
+<td align="left">tags</td>
+<td align="left">文章标签</td>
+</tr>
+<tr>
+<td align="left">categories</td>
+<td align="left">文章分类</td>
+</tr>
+<tr>
+<td align="left">keywords</td>
+<td align="left">文章关键字</td>
+</tr>
+</tbody></table>
+<p>最终显示：</p>
+<img src="/2023/03/29/lab-report-3-2/clip_image006-167957298457021.png" class title="img">
+
+<p>其他常用命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;name&quot;       # 新建文章</span><br><span class="line">hexo new page &quot;name&quot;  # 新建页面</span><br><span class="line">hexo g                # 生成页面</span><br><span class="line">hexo d                # 部署</span><br><span class="line">hexo g -d             # 生成页面并部署</span><br><span class="line">hexo s                # 本地预览</span><br><span class="line">hexo clean            # 清除缓存和已生成的静态文件</span><br><span class="line">hexo help             # 帮助</span><br></pre></td></tr></table></figure>
+
+<h3 id="实验总结："><a href="#实验总结：" class="headerlink" title="实验总结："></a>实验总结：</h3><p>GitHub Pages 是由 GitHub 官方提供的一种免费的静态站点托管服务，让我们可以在 GitHub 仓库里托管和发布自己的静态网站页面。</p>
+<p>Hexo 是一个快速、简洁且高效的静态博客框架，它基于 Node.js 运行，可以将我们撰写的 Markdown 文档解析渲染成静态的 HTML 网页。</p>
+<p>Hexo + GitHub 文章发布原理：</p>
+<p>在本地撰写 Markdown 格式文章后，通过 Hexo 解析文档，渲染生成具有主题样式的 HTML 静态网页，再推送到 GitHub 上完成博文的发布。</p>
+<img src="/2023/03/29/lab-report-3-2/clip_image002-167957356092922.png" class>
+
+<p>优点和不足</p>
+<p>优点：完全免费；静态站点，轻量快速；可按需求自由定制改造；托管在 GitHub，安全省心；迁移方便。</p>
+<p>不足：发文不便，依赖于本地环境；更适合个人博客使用；GitHub 在国内访问速度有点不快。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/03/29/lab-report-3-2/" data-id="clftfki7h0002awukakzfcx4u" data-title="lab report 3-2" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-new-test-p" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/03/29/new-test-p/" class="article-date">
@@ -218,7 +377,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/29/new-test-p/" data-id="clftfhebh0001ucuk83fc6jk1" data-title="lab report" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/03/29/new-test-p/" data-id="clftfki770000awukb0z0bklm" data-title="lab report" class="article-share-link">Share</a>
       
       
       
@@ -269,7 +428,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/14/hello-world/" data-id="clftfhebc0000ucuk85zi8t5w" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/03/14/hello-world/" data-id="clftfki7f0001awukfkes6jd2" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
@@ -310,6 +469,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2023/03/29/lab-report-3-2/">lab report 3-2</a>
+          </li>
         
           <li>
             <a href="/2023/03/29/new-test-p/">lab report</a>
